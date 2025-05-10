@@ -6,6 +6,13 @@ import { fetchCardData } from '@/app/lib/data'; //deleting fetchLatestInvoices
 import { Suspense } from 'react';
 import { RevenueChartSkeleton, InvoiceSkeleton, CardsSkeleton, } from '@/app/ui/skeletons'; //importing skeleton InvoceSkeleton
 
+ 
+import { Metadata } from 'next';
+export const metadata: Metadata = {
+  title: 'Dashboard',
+};
+
+
 export default async function Page() {
 
   const { numberOfCustomers, numberOfInvoices, totalPaidInvoices, totalPendingInvoices } = await fetchCardData();
